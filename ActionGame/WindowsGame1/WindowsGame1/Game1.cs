@@ -18,6 +18,7 @@ namespace WindowsGame1
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        SoundManager sm = new SoundManager();
 
         public Game1()
         {
@@ -28,20 +29,20 @@ namespace WindowsGame1
 
         public class SoundManager
         {
-            public SoundEffect playerShootSound, explodeSound, menuSound;
+            public SoundEffect blip, menuSelect, explosion, roadChoice;
             public Song bgMusic;
             public SoundManager()
             {
-                playerShootSound = explodeSound = menuSound = null;
+                blip = menuSelect = explosion = roadChoice = null;
                 bgMusic = null;
             }
             public void LoadContent(ContentManager Content)
             {
-                playerShootSound = Content.Load<SoundEffect>("playershoot");
-                explodeSound = Content.Load<SoundEffect>("explode");
-                menuSound = Content.Load<SoundEffect>("epic1");
+                blip = Content.Load<SoundEffect>("blip.wav");
+                menuSelect = Content.Load<SoundEffect>("select.wav");
+                explosion = Content.Load<SoundEffect>("explosion.wav");
+                roadChoice = Content.Load<SoundEffect>("choice.wav");
                 bgMusic = Content.Load<Song>("theme");
-
             }
 
         }
@@ -66,7 +67,7 @@ namespace WindowsGame1
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            sm.LoadContent(Content);
             // TODO: use this.Content to load your game content here
         }
 
