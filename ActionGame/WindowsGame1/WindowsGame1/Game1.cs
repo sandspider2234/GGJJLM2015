@@ -30,9 +30,7 @@ namespace WindowsGame1
             Content.RootDirectory = "Content";
         }
 
-<<<<<<< HEAD
-      
-=======
+
 
         public class SoundManager
         {
@@ -59,7 +57,7 @@ namespace WindowsGame1
         /// related content.  Calling base.Initialize will enumerate through any components
         /// and initialize them as well.
         /// </summary>
->>>>>>> origin/master
+
         protected override void Initialize()
         {
           
