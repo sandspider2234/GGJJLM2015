@@ -25,6 +25,26 @@ namespace WindowsGame1
             Content.RootDirectory = "Content";
         }
 
+
+        public class SoundManager
+        {
+            public SoundEffect playerShootSound, explodeSound, menuSound;
+            public Song bgMusic;
+            public SoundManager()
+            {
+                playerShootSound = explodeSound = menuSound = null;
+                bgMusic = null;
+            }
+            public void LoadContent(ContentManager Content)
+            {
+                playerShootSound = Content.Load<SoundEffect>("playershoot");
+                explodeSound = Content.Load<SoundEffect>("explode");
+                menuSound = Content.Load<SoundEffect>("epic1");
+                bgMusic = Content.Load<Song>("theme");
+
+            }
+
+        }
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
         /// This is where it can query for any required services and load any non-graphic
